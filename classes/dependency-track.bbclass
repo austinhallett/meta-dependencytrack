@@ -96,7 +96,7 @@ python do_dependencytrack_upload () {
         dt_url,
         data=payload,
         headers=headers,
-        method="PUT")
+        method="POST")
     
     try:
         urllib.request.urlopen(req)
