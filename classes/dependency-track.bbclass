@@ -88,7 +88,8 @@ python do_dependencytrack_upload () {
     bb.debug(2, f"Uploading SBOM to project {dt_project} at {dt_url}")
     
     headers = {
-        "Content-Type": "application/json",
+        "Content-Type": "multipart/form-data",
+        "Accept": "application/json",
         "X-API-Key": d.getVar("DEPENDENCYTRACK_API_KEY")
     }
     req = urllib.request.Request(
